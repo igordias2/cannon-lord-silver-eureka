@@ -5,13 +5,17 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public float damage = 1f;
+    public float speed = 10;
+    public float coolDownToNextShot = 0.25f;
+
     void Start()
     {
         Destroy(this.gameObject, 5f);
     }
     void Update()
     {
-        this.transform.Translate(Vector2.up *Time.deltaTime, Space.Self);
+
+        this.transform.Translate(Vector2.up * Time.deltaTime * speed, Space.Self);
     }
     public void SetDamage(float damage){
         this.damage = damage;
