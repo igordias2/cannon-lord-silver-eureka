@@ -1,7 +1,7 @@
 # cannon-lord-silver-eureka
 Jogo em Unity3D como teste Blue Pixel
 
-Para entrar no jogo é só entrar no ["Linkß"](https://qjox.itch.io/cannon-lord-silver-eureka) ou baixar o APK
+Para entrar no jogo é só entrar no ["Link"](https://qjox.itch.io/cannon-lord-silver-eureka) ou baixar o ["APK"](https://github.com/igordias2/cannon-lord-silver-eureka/releases/download/master/cannon-lord-silver-eureka.apk)
 
 ## Instrucoes de uso
 * para comecar a jogar, clique no botao jogar.
