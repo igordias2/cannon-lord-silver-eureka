@@ -123,3 +123,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   speed: 5
+  coolDownToNextShot: 1

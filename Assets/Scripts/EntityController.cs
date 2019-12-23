@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EntityController : MonoBehaviour
 {
-    
+    [Header("Morcego Stats")]
     float startLife; public float life = 1;
     public bool died;
     float offSet = 2f;

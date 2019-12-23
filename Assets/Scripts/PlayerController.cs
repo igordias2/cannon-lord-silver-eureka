@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    [Header("Player Stats")]
     public int life = 3;
     [SerializeField] float speedToRotate;
     float rotationAngle = 1;
@@ -16,6 +13,10 @@ public class PlayerController : MonoBehaviour
     float _coolDownToShootAgain;
     bool canShoot; 
     public bool dead = true;
+    
+    [Header("HUD")]
+    public UnityEngine.UI.Image selectedBulletImage;
+    
     void Start()
     {
         player = this.gameObject;
@@ -38,7 +39,9 @@ public class PlayerController : MonoBehaviour
         }
         
     }
-
+    public SpriteRenderer GetSelectedWeaponSprite(){
+        return GameManager.GM.bullets[selectedBullet].GetComponent<SpriteRenderer>();
+    }
     private void Die()
     {
         dead = true;
@@ -53,6 +56,11 @@ public class PlayerController : MonoBehaviour
         if(selectedBullet < 0){
             this.selectedBullet = (short)(GameManager.GM.bullets.Length-1);
         }
+        UpdateDisplayBullet();
+    }
+    public void UpdateDisplayBullet(){
+        this.selectedBulletImage.sprite = GetSelectedWeaponSprite().sprite;
+        this.selectedBulletImage.color = GetSelectedWeaponSprite().color;
     }
     public void ReceiveDamage(int damage){
         if(dead)

@@ -54,7 +54,9 @@ public class GameManager : MonoBehaviour
         Invoke("disableMenu" ,canvasMenu.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
         scoreTXT.transform.parent.gameObject.SetActive(true);
         canSpawnEnemies = true;
-        FindObjectOfType<PlayerController>().dead = false;
+        PlayerController player =  FindObjectOfType<PlayerController>();
+        player.dead = false;
+        player.UpdateDisplayBullet();
         yield return null;
     }
     void disableMenu(){
